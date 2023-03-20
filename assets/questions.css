@@ -38,6 +38,11 @@
     justify-content: space-between;
 }
 
+#txt {
+    background-color: rgba(238, 99, 99, 0.842);
+    font-size: 2rem;
+    text-align: center;
+}
 .hud-prefix {
     text-align: center;
     font-size: 2rem;
