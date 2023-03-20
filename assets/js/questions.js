@@ -1,3 +1,17 @@
+window.onload = timedText;
+function timedText() {
+   var txt = document.getElementById('txt'),
+     counter = 5;
+   var timer = setInterval(function () {
+     if(counter <= 0) return clearInterval(timer) && window.location.assign('./main.html');
+     txt.value = counter + " seconds";
+     counter--;
+     
+   }, 1000);
+}
+
+
+
 var question = document.getElementById('question');
 var choices = Array.from(document.getElementsByClassName('choice-text'));
 var questionCounterText = document.getElementById('questionCounter');
@@ -8,6 +22,8 @@ var acceptingAnswers = false;
 var score = 0;
 var questionCounter = 0;
 var availableQuestions = [];
+
+
 
 var questions = [
     {
@@ -120,3 +136,4 @@ incrementScore = num => {
 }
 
 startGame();
+
