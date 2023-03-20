@@ -3,7 +3,7 @@ var saveScoreBtn = document.getElementById('saveScoreBtn');
 var finalScore = document.getElementById('finalScore');
 var mostRecentScore = localStorage.getItem('mostRecentScore');
 
-var highScores = JSON.parse(localStorage.getItem('highscores')) || [];
+var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 console.log(highScores);
 
 var maxHighScore = 5;
@@ -21,7 +21,7 @@ saveHighScore = (e) => {
     e.preventDefault();
 
     var score = {
-        score: Math.floor(Math.random() * 100),
+        score: mostRecentScore,
         name: username.value
     };
     highScores.push(score);
@@ -31,7 +31,7 @@ saveHighScore = (e) => {
     highScores.splice(5);
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('./index.html')
+    window.location.assign('./main.html')
 
     
 };
