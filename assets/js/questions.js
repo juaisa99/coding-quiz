@@ -1,9 +1,13 @@
+
+// Alert timer countdown and reset to go home and try again if timer runs out
 window.onload = timedText;
 function timedText() {
    var txt = document.getElementById('txt'),
-     counter = 5;
+     counter = 40;
    var timer = setInterval(function () {
-     if(counter <= 0) return clearInterval(timer) && window.location.assign('./main.html');
+     if(counter <0) { clearInterval(timer)
+        window.location.assign('./main.html')
+        alert("Please try again!");}
      txt.value = counter + " seconds";
      counter--;
      
@@ -23,7 +27,7 @@ var score = 0;
 var questionCounter = 0;
 var availableQuestions = [];
 
-
+// list of Questions
 
 var questions = [
     {
@@ -73,6 +77,7 @@ var questions = [
     },
 ];
 
+// Questions score and function
 var correctBonus = 20;
 var maxQuestion = 5;
 
@@ -104,7 +109,7 @@ getNewQuestion = () => {
     availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
 };
-
+// Answers section
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return;
