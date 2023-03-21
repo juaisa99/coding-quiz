@@ -6,7 +6,7 @@ function timedText() {
      counter = 40;
    var timer = setInterval(function () {
      if(counter <0) { clearInterval(timer)
-        window.location.assign('./main.html')
+        window.location.assign('./index.html')
         alert("Please try again!");}
      txt.value = counter + " seconds";
      counter--;
